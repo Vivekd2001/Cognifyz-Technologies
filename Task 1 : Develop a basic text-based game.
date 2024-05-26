@@ -1,5 +1,8 @@
-Task 1 :  
-Level 1: Beginner To Where Data Meets Intelligence
+Task 1 : Develop a basic text-based game.
+Level 1
+
+Objective: Implement a simple game using
+conditional statements for game logic.
 
 
 import java.util.Random;
