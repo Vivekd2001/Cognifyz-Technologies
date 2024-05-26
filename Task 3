@@ -1,0 +1,155 @@
+Task 3 
+Level 2: Intermediate Task 3: Create a console application for basic CRUD operations on a list of tasks.
+
+Objective: Implement Create, Read, Update, and
+Delete operations using arrays or lists for data
+storage.
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Task {
+    private int id;
+    private String title;
+    private String description;
+
+    public Task(int id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+}
+
+public class TaskManager {
+    private List<Task> tasks = new ArrayList<>();
+    private int nextId = 1;
+
+    public void createTask(String title, String description) {
+        Task newTask = new Task(nextId++, title, description);
+        tasks.add(newTask);
+        System.out.println("Task created: " + newTask);
+    }
+
+    public void readTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks available.");
+        } else {
+            for (Task task : tasks) {
+                System.out.println(task);
+            }
+        }
+    }
+
+    public void updateTask(int id, String newTitle, String newDescription) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.setTitle(newTitle);
+                task.setDescription(newDescription);
+                System.out.println("Task updated: " + task);
+                return;
+            }
+        }
+        System.out.println("Task not found with id: " + id);
+    }
+
+    public void deleteTask(int id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                tasks.remove(task);
+                System.out.println("Task deleted: " + task);
+                return;
+            }
+        }
+        System.out.println("Task not found with id: " + id);
+    }
+
+    public static void main(String[] args) {
+        TaskManager taskManager = new TaskManager();
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+
+        while (!exit) {
+            System.out.println("\nTask Manager");
+            System.out.println("1. Create Task");
+            System.out.println("2. Read Tasks");
+            System.out.println("3. Update Task");
+            System.out.println("4. Delete Task");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter task title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter task description: ");
+                    String description = scanner.nextLine();
+                    taskManager.createTask(title, description);
+                    break;
+                case 2:
+                    taskManager.readTasks();
+                    break;
+                case 3:
+                    System.out.print("Enter task ID to update: ");
+                    int idToUpdate = scanner.nextInt();
+                    scanner.nextLine();  // Consume newline
+                    System.out.print("Enter new task title: ");
+                    String newTitle = scanner.nextLine();
+                    System.out.print("Enter new task description: ");
+                    String newDescription = scanner.nextLine();
+                    taskManager.updateTask(idToUpdate, newTitle, newDescription);
+                    break;
+                case 4:
+                    System.out.print("Enter task ID to delete: ");
+                    int idToDelete = scanner.nextInt();
+                    scanner.nextLine();  // Consume newline
+                    taskManager.deleteTask(idToDelete);
+                    break;
+                case 5:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        scanner.close();
+    }
+}
