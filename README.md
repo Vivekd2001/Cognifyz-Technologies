@@ -8,7 +8,13 @@ The company focuses on delivering innovative and cutting-edge solutions to meet 
 Completed Task/projects : 
 
 Task 1 : Level 1:  Develop a basic text-based game.
+
+
 Task 2: Generate and print simple number patterns.
+
+
 Task 3: Create a console application for basic CRUD operations on a list of tasks.
+
+
 Task 4: Build a temperature converter program.
 
