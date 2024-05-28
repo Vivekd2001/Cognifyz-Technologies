@@ -1,10 +1,11 @@
-Task 3 
-Level 2: Intermediate Task 3: Create a console application for basic CRUD operations on a list of tasks.
+Level 2 
+Task 3: Intermediate Task 3: Create a console application for basic CRUD operations on a list of tasks.
 
 Objective: Implement Create, Read, Update, and
 Delete operations using arrays or lists for data
 storage.
 
+Solution : 
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,3 +154,59 @@ public class TaskManager {
         scanner.close();
     }
 }
+
+output : 
+
+java -cp /tmp/UNJP2jCkFe/TaskManager
+
+Task Manager
+1. Create Task
+2. Read Tasks
+3. Update Task
+4. Delete Task
+5. Exit
+Choose an option: 1
+Enter task title: Complete Java Assignment
+Enter task description: Write a Java program to implement various data structures.
+Task created: Task{id=1, title='Complete Java Assignment', description='Write a Java program to implement various data structures.'}
+
+Task Manager
+1. Create Task
+2. Read Tasks
+3. Update Task
+4. Delete Task
+5. Exit
+Choose an option: 2
+Task{id=1, title='Complete Java Assignment', description='Write a Java program to implement various data structures.'}
+
+Task Manager
+1. Create Task
+2. Read Tasks
+3. Update Task
+4. Delete Task
+5. Exit
+Choose an option: 3
+Enter task ID to update: 1
+Enter new task title: Complete Java Assignment and Submit
+Enter new task description: Finalize the code and submit the assignment.
+Task updated: Task{id=1, title='Complete Java Assignment and Submit', description='Finalize the code and submit the assignment.'}
+
+Task Manager
+1. Create Task
+2. Read Tasks
+3. Update Task
+4. Delete Task
+5. Exit
+Choose an option: 4
+Enter task ID to delete: 2
+Task not found with id: 2
+
+Task Manager
+1. Create Task
+2. Read Tasks
+3. Update Task
+4. Delete Task
+5. Exit
+Choose an option: 5
+
+=== Code Execution Successful ===
