@@ -36,3 +36,18 @@ public class TemperatureConverter {
         input.close();
     }
 }
+
+
+
+Output : 
+
+Welcome to the Temperature Converter Program!
+Choose an option:
+1. Convert from Fahrenheit to Celsius
+2. Convert from Celsius to Fahrenheit
+2
+Enter temperature in Celsius: 0.78
+Temperature in Fahrenheit: 33.404
+
+=== Code Execution Successful ===
+
